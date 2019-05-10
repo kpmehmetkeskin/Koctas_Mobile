@@ -144,7 +144,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="OP__ZktmobilCalcTotalAmount">
+  <wsp:Policy wsu:Id="OP__ZktmobilGetMaterialInfo">
     <wsp:ExactlyOne>
       <wsp:All>
         <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
@@ -154,7 +154,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="OP__ZktmobilGetMaterialInfo">
+  <wsp:Policy wsu:Id="OP__ZktmobilCalcTotalAmount">
     <wsp:ExactlyOne>
       <wsp:All>
         <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
@@ -451,6 +451,11 @@
     </xsd:schema>
     <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
       <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
       <xsd:complexType name="ZktmobilItemsToCalculate">
         <xsd:sequence>
           <xsd:element name="Matnr" type="n0:char18" />
@@ -587,6 +592,7 @@
           <xsd:element name="Tflag" type="n0:char1" />
           <xsd:element name="Status" type="n0:char1" />
           <xsd:element name="CancelDate" type="n0:date10" />
+          <xsd:element name="CancelTime" type="n0:time" />
           <xsd:element name="Neden" type="n0:char2" />
           <xsd:element name="Ktipi" type="n0:char2" />
           <xsd:element name="Itipi" type="n0:char10" />
@@ -601,6 +607,18 @@
           <xsd:element name="Kesifotp" type="n0:char20" />
           <xsd:element name="Nakliyeotp" type="n0:char20" />
           <xsd:element name="Servisotp" type="n0:char20" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZkmobilSMgCreate">
+        <xsd:sequence>
+          <xsd:element name="Plant" type="n0:char4" />
+          <xsd:element name="StgeLoc" type="n0:char4" />
+          <xsd:element name="EntryQnt" type="n0:quantum13.3" />
+          <xsd:element name="MinusQnt" type="n0:quantum13.3" />
+          <xsd:element name="DmgdQnt" type="n0:quantum13.3" />
+          <xsd:element name="PoNumber" type="n0:char10" />
+          <xsd:element name="PoItem" type="n0:numeric5" />
+          <xsd:element name="Elikz" type="n0:char1" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="ZkmobilMgI">
@@ -678,6 +696,11 @@
       <xsd:complexType name="TableOfZsd002">
         <xsd:sequence>
           <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:Zsd002" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZkmobilSMgCreate">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZkmobilSMgCreate" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="TableOfZkmobilMgI">
@@ -947,8 +970,10 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element minOccurs="0" name="IDocDate" type="n0:date10" />
+            <xsd:element minOccurs="0" name="IFiori" type="tns:char1" />
             <xsd:element minOccurs="0" name="IHeader" type="tns:ZkmobilMgH" />
             <xsd:element minOccurs="0" name="IPstngDate" type="n0:date10" />
+            <xsd:element minOccurs="0" name="ItItems" type="tns:TableOfZkmobilSMgCreate" />
             <xsd:element minOccurs="0" name="TeReturn" type="tns:TableOfZkmobilReturn" />
             <xsd:element minOccurs="0" name="TiItems" type="tns:TableOfZkmobilMgI" />
           </xsd:sequence>
@@ -957,6 +982,7 @@
       <xsd:element name="ZktmobilMgCreate2Response">
         <xsd:complexType>
           <xsd:sequence>
+            <xsd:element minOccurs="0" name="ItItems" type="tns:TableOfZkmobilSMgCreate" />
             <xsd:element minOccurs="0" name="TeReturn" type="tns:TableOfZkmobilReturn" />
             <xsd:element minOccurs="0" name="TiItems" type="tns:TableOfZkmobilMgI" />
           </xsd:sequence>
@@ -1079,6 +1105,11 @@
     <wsdl:part name="parameter" element="tns:ZktmobilSevkiyatSiparisResponse" />
   </wsdl:message>
   <wsdl:portType name="ZKTMOBIL_SATIS">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://kterpdev.koctas.com.tr:8000/sap/bc/esdt/docu/sd_text?sap-client=500&amp;sd_name=ZKTMOBIL_SATIS" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
     <wsp:Policy>
       <wsp:PolicyReference URI="#IF__ZKTMOBIL_SATIS" />
     </wsp:Policy>

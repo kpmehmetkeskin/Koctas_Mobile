@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///Z:/Google Drive/_Calismalar/Koctas_Calismalar/Mobile Uygulamalar/Uygulamalar/KoctasMobil/2016/00_Guncel/KoctasMobil/_wsdl/ws_satis_v13.wsdl" filename="ws_satis_v13.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zktmobil_satis/500/service/service?sap-client=500" filename="service.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>

@@ -98,7 +98,7 @@ namespace KoctasMobil
 
             try
             {
-                if (String.IsNullOrEmpty(txt_malzemeno.Text) || String.IsNullOrEmpty(txt_miktar.Text))
+                if (String.IsNullOrEmpty(txt_malzemeno.Text) || String.IsNullOrEmpty(txt_miktar.Text) || String.IsNullOrEmpty(hasarMiktar.Text) || String.IsNullOrEmpty(irsaliyeMiktar.Text))
                 {
                     return;
                 }
@@ -113,6 +113,8 @@ namespace KoctasMobil
                     Cursor.Current = Cursors.WaitCursor;
 
                     decimal miktar;
+                    decimal hasarliMiktar;
+                    decimal irsaliyeMiktari;
 
                     try
                     {
@@ -121,6 +123,35 @@ namespace KoctasMobil
                     catch
                     {
                         MessageBox.Show("Miktar alanına sayısal bir değer giriniz");
+                        Cursor.Current = Cursors.Default;
+                        return;
+                    }
+
+                    try
+                    {
+                        hasarliMiktar = decimal.Parse(hasarMiktar.Text.Trim());
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Hasar Miktar alanına sayısal bir değer giriniz");
+                        Cursor.Current = Cursors.Default;
+                        return;
+                    }
+
+                    try
+                    {
+                        irsaliyeMiktari = decimal.Parse(irsaliyeMiktar.Text.Trim());
+                    }
+                    catch
+                    {
+                        MessageBox.Show("İrsaliye Miktar alanına sayısal bir değer giriniz");
+                        Cursor.Current = Cursors.Default;
+                        return;
+                    }
+
+                    if (irsaliyeMiktari < miktar)
+                    {
+                        MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
                         Cursor.Current = Cursors.Default;
                         return;
                     }
@@ -277,6 +308,8 @@ namespace KoctasMobil
                         rowAdd["lgort"] = row["Lgort"].ToString();
                         rowAdd["irsaliyeNo"] = gecerliIrsaliyeNo;
                         rowAdd["S"] = "";
+                        rowAdd["irsaliyeMiktar"] = irsaliyeMiktar;
+                        rowAdd["hasarMiktar"] = hasarMiktar;
 
                         if (miktar >= kontrolMiktar)
                         {
@@ -662,6 +695,12 @@ namespace KoctasMobil
         private void grd_mal_CurrentCellChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void reddedilenTeslimat_CheckStateChanged(object sender, EventArgs e)
+        {
+            frm_Malgiris1_Reddedilen_Sevkiyat frm = new frm_Malgiris1_Reddedilen_Sevkiyat();
+            frm.ShowDialog();
         }
 
 
