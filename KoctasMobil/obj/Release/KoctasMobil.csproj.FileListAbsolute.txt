@@ -317,3 +317,4 @@ C:\Users\kerem.hacifazlioglu\Documents\Visual Studio 2008\Projects\Koctas_Mobile
 C:\Users\kerem.hacifazlioglu\Documents\Visual Studio 2008\Projects\Koctas_Mobile\KoctasMobil\bin\Release\KoctasMobil.exe
 C:\Users\kerem.hacifazlioglu\Documents\Visual Studio 2008\Projects\Koctas_Mobile\KoctasMobil\bin\Release\KoctasMobil.pdb
 C:\Users\kerem.hacifazlioglu\Documents\Visual Studio 2008\Projects\Koctas_Mobile\KoctasMobil\obj\Release\KoctasMobil.pdb
+C:\GitRepo\Koctas_Mobile\KoctasMobil\obj\Release\KoctasMobil.frm_Malgiris1_Reddedilen_Sevkiyat.resources
