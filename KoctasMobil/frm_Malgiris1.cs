@@ -308,8 +308,8 @@ namespace KoctasMobil
                         rowAdd["lgort"] = row["Lgort"].ToString();
                         rowAdd["irsaliyeNo"] = gecerliIrsaliyeNo;
                         rowAdd["S"] = "";
-                        rowAdd["irsaliyeMiktar"] = irsaliyeMiktar;
-                        rowAdd["hasarMiktar"] = hasarMiktar;
+                        rowAdd["irsaliyeMiktar"] = irsaliyeMiktar.Text.ToString();
+                        rowAdd["hasarMiktar"] = hasarMiktar.Text.ToString();
 
                         if (miktar >= kontrolMiktar)
                         {
@@ -602,6 +602,7 @@ namespace KoctasMobil
                 WS_Satis.service srv = new KoctasMobil.WS_Satis.service();
                 WS_Satis.ZkmobilMgH mgh = new KoctasMobil.WS_Satis.ZkmobilMgH();
                 WS_Satis.ZkmobilMgI[] mgi = new KoctasMobil.WS_Satis.ZkmobilMgI[rowsTopla.Length];
+                WS_Satis.ZkmobilSMgCreate[] mgc = new KoctasMobil.WS_Satis.ZkmobilSMgCreate[rowsTopla.Length];
                 WS_Satis.ZkmobilReturn[] ret = new KoctasMobil.WS_Satis.ZkmobilReturn[0];
                 WS_Satis.ZktmobilMgCreate2 cre = new KoctasMobil.WS_Satis.ZktmobilMgCreate2();
                 WS_Satis.ZktmobilMgCreate2Response resp = new KoctasMobil.WS_Satis.ZktmobilMgCreate2Response();
@@ -619,6 +620,7 @@ namespace KoctasMobil
                     mgi[i].EntryQnt = decimal.Parse(row["menge"].ToString());
                     mgi[i].PoNumber = row["ebeln"].ToString();
                     mgi[i].PoItem = row["ebelp"].ToString();
+                    
                     if (row["S"].ToString() == "X")
                     {
                         mgi[i].Elikz = "X";
@@ -626,10 +628,32 @@ namespace KoctasMobil
                     i++;
                 }
 
+                int j = 0;
+                foreach (DataRow row in rowsTopla)
+                {
+
+                    mgc[j] = new KoctasMobil.WS_Satis.ZkmobilSMgCreate();
+                    mgc[j].Plant = row["werks"].ToString();
+                    mgc[j].StgeLoc = row["lgort"].ToString();
+                    mgc[j].EntryQnt = decimal.Parse(row["menge"].ToString());
+                    mgc[j].PoNumber = row["ebeln"].ToString();
+                    mgc[j].PoItem = row["ebelp"].ToString();
+                    mgc[j].DmgdQnt = decimal.Parse(row["hasarMiktar"].ToString());
+                    mgc[j].MinusQnt = decimal.Parse(row["irsaliyeMiktar"].ToString());
+
+                    if (row["S"].ToString() == "X")
+                    {
+                        mgc[j].Elikz = "X";
+                    }
+                    i++;
+                }
+
+
                 
                 cre.IHeader = mgh;
                 cre.TeReturn = ret;
                 cre.TiItems = mgi;
+                cre.ItItems = mgc;
 
                 
                 cre.IDocDate = gecerliBelgeTarihi.ToString("yyyy-MM-dd");
