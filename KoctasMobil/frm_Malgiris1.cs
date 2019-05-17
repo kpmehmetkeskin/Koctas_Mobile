@@ -98,7 +98,8 @@ namespace KoctasMobil
 
             try
             {
-                if (String.IsNullOrEmpty(txt_malzemeno.Text) || String.IsNullOrEmpty(txt_miktar.Text) || String.IsNullOrEmpty(hasarMiktar.Text) || String.IsNullOrEmpty(irsaliyeMiktar.Text))
+                //if (String.IsNullOrEmpty(txt_malzemeno.Text) || String.IsNullOrEmpty(txt_miktar.Text) || String.IsNullOrEmpty(hasarMiktar.Text) || String.IsNullOrEmpty(irsaliyeMiktar.Text))
+                if (String.IsNullOrEmpty(txt_malzemeno.Text) || String.IsNullOrEmpty(txt_miktar.Text))
                 {
                     return;
                 }
