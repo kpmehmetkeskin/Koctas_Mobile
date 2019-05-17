@@ -43,6 +43,8 @@
             this.dataGridTextBoxColumn9 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn10 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn11 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.dataGridTextBoxColumn12 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.dataGridTextBoxColumn13 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.txt_miktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_malzemeno = new System.Windows.Forms.TextBox();
@@ -57,8 +59,6 @@
             this.irsaliyeMiktar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.hasarMiktar = new System.Windows.Forms.TextBox();
-            this.dataGridTextBoxColumn12 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn13 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.reddedilenTeslimat = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -183,6 +183,20 @@
             this.dataGridTextBoxColumn11.HeaderText = "İrs. No";
             this.dataGridTextBoxColumn11.MappingName = "irsaliyeNo";
             // 
+            // dataGridTextBoxColumn12
+            // 
+            this.dataGridTextBoxColumn12.Format = "";
+            this.dataGridTextBoxColumn12.FormatInfo = null;
+            this.dataGridTextBoxColumn12.HeaderText = "İrsaliye Miktar";
+            this.dataGridTextBoxColumn12.MappingName = "irsaliyeMiktar";
+            // 
+            // dataGridTextBoxColumn13
+            // 
+            this.dataGridTextBoxColumn13.Format = "";
+            this.dataGridTextBoxColumn13.FormatInfo = null;
+            this.dataGridTextBoxColumn13.HeaderText = "Hasar Miktar";
+            this.dataGridTextBoxColumn13.MappingName = "hasarMiktar";
+            // 
             // txt_miktar
             // 
             this.txt_miktar.Location = new System.Drawing.Point(93, 26);
@@ -295,6 +309,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.Text = "İrsaliye Miktarı:";
+            this.label3.Visible = false;
             // 
             // irsaliyeMiktar
             // 
@@ -302,6 +317,7 @@
             this.irsaliyeMiktar.Name = "irsaliyeMiktar";
             this.irsaliyeMiktar.Size = new System.Drawing.Size(59, 23);
             this.irsaliyeMiktar.TabIndex = 176;
+            this.irsaliyeMiktar.Visible = false;
             // 
             // label4
             // 
@@ -309,6 +325,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.Text = "Hasar Miktarı";
+            this.label4.Visible = false;
             // 
             // hasarMiktar
             // 
@@ -316,20 +333,7 @@
             this.hasarMiktar.Name = "hasarMiktar";
             this.hasarMiktar.Size = new System.Drawing.Size(45, 23);
             this.hasarMiktar.TabIndex = 178;
-            // 
-            // dataGridTextBoxColumn12
-            // 
-            this.dataGridTextBoxColumn12.Format = "";
-            this.dataGridTextBoxColumn12.FormatInfo = null;
-            this.dataGridTextBoxColumn12.HeaderText = "İrsaliye Miktar";
-            this.dataGridTextBoxColumn12.MappingName = "irsaliyeMiktar";
-            // 
-            // dataGridTextBoxColumn13
-            // 
-            this.dataGridTextBoxColumn13.Format = "";
-            this.dataGridTextBoxColumn13.FormatInfo = null;
-            this.dataGridTextBoxColumn13.HeaderText = "Hasar Miktar";
-            this.dataGridTextBoxColumn13.MappingName = "hasarMiktar";
+            this.hasarMiktar.Visible = false;
             // 
             // reddedilenTeslimat
             // 
@@ -338,6 +342,7 @@
             this.reddedilenTeslimat.Size = new System.Drawing.Size(57, 20);
             this.reddedilenTeslimat.TabIndex = 179;
             this.reddedilenTeslimat.Text = "Red T";
+            this.reddedilenTeslimat.Visible = false;
             this.reddedilenTeslimat.CheckStateChanged += new System.EventHandler(this.reddedilenTeslimat_CheckStateChanged);
             // 
             // frm_Malgiris1

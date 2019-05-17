@@ -113,8 +113,8 @@ namespace KoctasMobil
                     Cursor.Current = Cursors.WaitCursor;
 
                     decimal miktar;
-                    decimal hasarliMiktar;
-                    decimal irsaliyeMiktari;
+                    //decimal hasarliMiktar;
+                    //decimal irsaliyeMiktari;
 
                     try
                     {
@@ -127,34 +127,34 @@ namespace KoctasMobil
                         return;
                     }
 
-                    try
-                    {
-                        hasarliMiktar = decimal.Parse(hasarMiktar.Text.Trim());
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Hasar Miktar alanına sayısal bir değer giriniz");
-                        Cursor.Current = Cursors.Default;
-                        return;
-                    }
+                    //try
+                    //{
+                    //    hasarliMiktar = decimal.Parse(hasarMiktar.Text.Trim());
+                    //}
+                    //catch
+                    //{
+                    //    MessageBox.Show("Hasar Miktar alanına sayısal bir değer giriniz");
+                    //    Cursor.Current = Cursors.Default;
+                    //    return;
+                    //}
 
-                    try
-                    {
-                        irsaliyeMiktari = decimal.Parse(irsaliyeMiktar.Text.Trim());
-                    }
-                    catch
-                    {
-                        MessageBox.Show("İrsaliye Miktar alanına sayısal bir değer giriniz");
-                        Cursor.Current = Cursors.Default;
-                        return;
-                    }
+                    //try
+                    //{
+                    //    irsaliyeMiktari = decimal.Parse(irsaliyeMiktar.Text.Trim());
+                    //}
+                    //catch
+                    //{
+                    //    MessageBox.Show("İrsaliye Miktar alanına sayısal bir değer giriniz");
+                    //    Cursor.Current = Cursors.Default;
+                    //    return;
+                    //}
 
-                    if (irsaliyeMiktari < miktar)
-                    {
-                        MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
-                        Cursor.Current = Cursors.Default;
-                        return;
-                    }
+                    //if (irsaliyeMiktari < miktar)
+                    //{
+                    //    MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
+                    //    Cursor.Current = Cursors.Default;
+                    //    return;
+                    //}
 
                     
                     //Miktar çarpan ile çarpılıyor
@@ -602,7 +602,7 @@ namespace KoctasMobil
                 WS_Satis.service srv = new KoctasMobil.WS_Satis.service();
                 WS_Satis.ZkmobilMgH mgh = new KoctasMobil.WS_Satis.ZkmobilMgH();
                 WS_Satis.ZkmobilMgI[] mgi = new KoctasMobil.WS_Satis.ZkmobilMgI[rowsTopla.Length];
-                WS_Satis.ZkmobilSMgCreate[] mgc = new KoctasMobil.WS_Satis.ZkmobilSMgCreate[rowsTopla.Length];
+                //WS_Satis.ZkmobilSMgCreate[] mgc = new KoctasMobil.WS_Satis.ZkmobilSMgCreate[rowsTopla.Length];
                 WS_Satis.ZkmobilReturn[] ret = new KoctasMobil.WS_Satis.ZkmobilReturn[0];
                 WS_Satis.ZktmobilMgCreate2 cre = new KoctasMobil.WS_Satis.ZktmobilMgCreate2();
                 WS_Satis.ZktmobilMgCreate2Response resp = new KoctasMobil.WS_Satis.ZktmobilMgCreate2Response();
@@ -628,33 +628,32 @@ namespace KoctasMobil
                     i++;
                 }
 
-                int j = 0;
-                foreach (DataRow row in rowsTopla)
-                {
+                //int j = 0;
+                //foreach (DataRow row in rowsTopla)
+                //{
 
-                    mgc[j] = new KoctasMobil.WS_Satis.ZkmobilSMgCreate();
-                    mgc[j].Plant = row["werks"].ToString();
-                    mgc[j].StgeLoc = row["lgort"].ToString();
-                    mgc[j].EntryQnt = decimal.Parse(row["menge"].ToString());
-                    mgc[j].PoNumber = row["ebeln"].ToString();
-                    mgc[j].PoItem = row["ebelp"].ToString();
-                    mgc[j].DmgdQnt = decimal.Parse(row["hasarMiktar"].ToString());
-                    mgc[j].MinusQnt = decimal.Parse(row["irsaliyeMiktar"].ToString());
+                //    mgc[j] = new KoctasMobil.WS_Satis.ZkmobilSMgCreate();
+                //    mgc[j].Plant = row["werks"].ToString();
+                //    mgc[j].StgeLoc = row["lgort"].ToString();
+                //    mgc[j].EntryQnt = decimal.Parse(row["menge"].ToString());
+                //    mgc[j].PoNumber = row["ebeln"].ToString();
+                //    mgc[j].PoItem = row["ebelp"].ToString();
+                //    mgc[j].DmgdQnt = decimal.Parse(row["hasarMiktar"].ToString());
+                //    mgc[j].MinusQnt = decimal.Parse(row["irsaliyeMiktar"].ToString());
 
-                    if (row["S"].ToString() == "X")
-                    {
-                        mgc[j].Elikz = "X";
-                    }
-                    i++;
-                }
+                //    if (row["S"].ToString() == "X")
+                //    {
+                //        mgc[j].Elikz = "X";
+                //    }
+                //    j++;
+                //}
 
 
                 
                 cre.IHeader = mgh;
                 cre.TeReturn = ret;
                 cre.TiItems = mgi;
-                cre.ItItems = mgc;
-
+                //cre.ItItems = mgc;
                 
                 cre.IDocDate = gecerliBelgeTarihi.ToString("yyyy-MM-dd");
                 cre.IPstngDate = gecerliKayitTarihi.ToString("yyyy-MM-dd");
