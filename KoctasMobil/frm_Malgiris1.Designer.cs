@@ -343,7 +343,7 @@
             this.reddedilenTeslimat.TabIndex = 179;
             this.reddedilenTeslimat.Text = "Red T";
             this.reddedilenTeslimat.Visible = false;
-            this.reddedilenTeslimat.CheckStateChanged += new System.EventHandler(this.reddedilenTeslimat_CheckStateChanged);
+            //this.reddedilenTeslimat.CheckStateChanged += new System.EventHandler(this.reddedilenTeslimat_CheckStateChanged);
             // 
             // frm_Malgiris1
             // 
