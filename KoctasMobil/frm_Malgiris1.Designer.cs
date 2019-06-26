@@ -45,21 +45,21 @@
             this.dataGridTextBoxColumn11 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn12 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn13 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.dataGridTextBoxColumn14 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.txt_miktar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_malzemeno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbBirim = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.irsaliyeMiktar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.hasarMiktar = new System.Windows.Forms.TextBox();
             this.btn_Check2 = new KoctasMobil.PictureButton();
             this.btn_sil = new KoctasMobil.PictureButton();
             this.btn_SiparişEkle = new KoctasMobil.PictureButton();
             this.btn_Geri = new KoctasMobil.PictureButton();
             this.btn_siparis = new KoctasMobil.PictureButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.irsaliyeMiktar = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.hasarMiktar = new System.Windows.Forms.TextBox();
-            this.reddedilenTeslimat = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // chk_Son
@@ -70,7 +70,6 @@
             this.chk_Son.Size = new System.Drawing.Size(65, 20);
             this.chk_Son.TabIndex = 162;
             this.chk_Son.Text = "Son T";
-            this.chk_Son.Visible = false;
             // 
             // grd_mal
             // 
@@ -97,6 +96,7 @@
             this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn11);
             this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn12);
             this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn13);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn14);
             // 
             // dataGridTextBoxColumn1
             // 
@@ -197,6 +197,13 @@
             this.dataGridTextBoxColumn13.HeaderText = "Hasar Miktar";
             this.dataGridTextBoxColumn13.MappingName = "hasarMiktar";
             // 
+            // dataGridTextBoxColumn14
+            // 
+            this.dataGridTextBoxColumn14.Format = "";
+            this.dataGridTextBoxColumn14.FormatInfo = null;
+            this.dataGridTextBoxColumn14.HeaderText = "Eksik Miktar";
+            this.dataGridTextBoxColumn14.MappingName = "eksikMiktar";
+            // 
             // txt_miktar
             // 
             this.txt_miktar.Location = new System.Drawing.Point(93, 26);
@@ -238,6 +245,34 @@
             this.cmbBirim.Name = "cmbBirim";
             this.cmbBirim.Size = new System.Drawing.Size(65, 23);
             this.cmbBirim.TabIndex = 172;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(4, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.Text = "İrsaliye Miktarı:";
+            // 
+            // irsaliyeMiktar
+            // 
+            this.irsaliyeMiktar.Location = new System.Drawing.Point(93, 49);
+            this.irsaliyeMiktar.Name = "irsaliyeMiktar";
+            this.irsaliyeMiktar.Size = new System.Drawing.Size(59, 23);
+            this.irsaliyeMiktar.TabIndex = 176;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(158, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.Text = "Hasar Miktarı";
+            // 
+            // hasarMiktar
+            // 
+            this.hasarMiktar.Location = new System.Drawing.Point(248, 49);
+            this.hasarMiktar.Name = "hasarMiktar";
+            this.hasarMiktar.Size = new System.Drawing.Size(45, 23);
+            this.hasarMiktar.TabIndex = 178;
             // 
             // btn_Check2
             // 
@@ -303,48 +338,6 @@
             this.btn_siparis.Text = "       Kaydet";
             this.btn_siparis.Click += new System.EventHandler(this.btn_siparis_Click);
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(4, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
-            this.label3.Text = "İrsaliye Miktarı:";
-            this.label3.Visible = false;
-            // 
-            // irsaliyeMiktar
-            // 
-            this.irsaliyeMiktar.Location = new System.Drawing.Point(93, 49);
-            this.irsaliyeMiktar.Name = "irsaliyeMiktar";
-            this.irsaliyeMiktar.Size = new System.Drawing.Size(59, 23);
-            this.irsaliyeMiktar.TabIndex = 176;
-            this.irsaliyeMiktar.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(158, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.Text = "Hasar Miktarı";
-            this.label4.Visible = false;
-            // 
-            // hasarMiktar
-            // 
-            this.hasarMiktar.Location = new System.Drawing.Point(250, 48);
-            this.hasarMiktar.Name = "hasarMiktar";
-            this.hasarMiktar.Size = new System.Drawing.Size(45, 23);
-            this.hasarMiktar.TabIndex = 178;
-            this.hasarMiktar.Visible = false;
-            // 
-            // reddedilenTeslimat
-            // 
-            this.reddedilenTeslimat.Location = new System.Drawing.Point(258, 78);
-            this.reddedilenTeslimat.Name = "reddedilenTeslimat";
-            this.reddedilenTeslimat.Size = new System.Drawing.Size(57, 20);
-            this.reddedilenTeslimat.TabIndex = 179;
-            this.reddedilenTeslimat.Text = "Red T";
-            this.reddedilenTeslimat.Visible = false;
-            //this.reddedilenTeslimat.CheckStateChanged += new System.EventHandler(this.reddedilenTeslimat_CheckStateChanged);
-            // 
             // frm_Malgiris1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -352,7 +345,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(318, 295);
             this.ControlBox = false;
-            this.Controls.Add(this.reddedilenTeslimat);
             this.Controls.Add(this.hasarMiktar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.irsaliyeMiktar);
@@ -408,6 +400,6 @@
         private System.Windows.Forms.TextBox hasarMiktar;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn12;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn13;
-        private System.Windows.Forms.CheckBox reddedilenTeslimat;
+        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn14;
     }
 }

@@ -150,12 +150,12 @@ namespace KoctasMobil
                         return;
                     }
 
-                    //if (irsaliyeMiktari < miktar)
-                    //{
-                    //    MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
-                    //    Cursor.Current = Cursors.Default;
-                    //    return;
-                    //}
+                    if (irsaliyeMiktari < miktar)
+                    {
+                        MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
+                        Cursor.Current = Cursors.Default;
+                       return;
+                    }
 
                     
                     //Miktar çarpan ile çarpılıyor
@@ -234,11 +234,9 @@ namespace KoctasMobil
 
                     if (miktar > max_menge)
                     {
-                        if (MessageBox.Show("Girmek istediğiniz miktar bu irsaliyedeki açık sipariş miktarından fazla. Yine de eklemek istiyor musunuz?", "BİLGİ", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button2) == DialogResult.No)
-                        {
-                            Cursor.Current = Cursors.Default;
-                            return;
-                        }
+                        MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
+                        Cursor.Current = Cursors.Default;
+                        return;
                     }
 
                     kalan_miktar = miktar;
@@ -311,7 +309,7 @@ namespace KoctasMobil
                         rowAdd["S"] = "";
                         rowAdd["irsaliyeMiktar"] = irsaliyeMiktar.Text.ToString();
                         rowAdd["hasarMiktar"] = hasarMiktar.Text.ToString();
-                        rowAdd["eksikMiktar"] = irsaliyeMiktari-miktar;
+                        rowAdd["eksikMiktar"] = irsaliyeMiktari-miktar-hasarliMiktar;
 
                         if (miktar >= kontrolMiktar)
                         {
@@ -722,13 +720,6 @@ namespace KoctasMobil
         {
 
         }
-
-        //private void reddedilenTeslimat_CheckStateChanged(object sender, EventArgs e)
-        //{
-        //    frm_Malgiris1_Reddedilen_Sevkiyat frm = new frm_Malgiris1_Reddedilen_Sevkiyat();
-        //    frm.ShowDialog();
-        //}
-
 
     }
 }
