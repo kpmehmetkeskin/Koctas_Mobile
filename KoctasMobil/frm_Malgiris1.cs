@@ -310,6 +310,7 @@ namespace KoctasMobil
                         rowAdd["irsaliyeMiktar"] = irsaliyeMiktar.Text.ToString();
                         rowAdd["hasarMiktar"] = hasarMiktar.Text.ToString();
                         rowAdd["eksikMiktar"] = irsaliyeMiktari-miktar-hasarliMiktar;
+                        // Son değişiklik
 
                         if (miktar >= kontrolMiktar)
                         {
