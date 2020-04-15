@@ -150,7 +150,7 @@ namespace KoctasMobil
                         return;
                     }
 
-                    if (irsaliyeMiktari < miktar)
+                    if (irsaliyeMiktari < miktar || irsaliyeMiktari<miktar+hasarliMiktar)
                     {
                         MessageBox.Show("Fazla ürün girişi yapılamaz. Girişlerinizi düzeltin");
                         Cursor.Current = Cursors.Default;

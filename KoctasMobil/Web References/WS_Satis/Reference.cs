@@ -1665,6 +1665,7 @@ namespace KoctasMobil.WS_Satis {
     }
     
     /// <remarks/>
+    /// <cgdskrm/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:sap-com:document:sap:soap:functions:mc-style")]

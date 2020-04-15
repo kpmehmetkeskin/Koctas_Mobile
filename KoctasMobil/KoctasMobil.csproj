@@ -68,6 +68,18 @@
     <Compile Include="AK_Login.designer.cs">
       <DependentUpon>AK_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_FixProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_FixProductList.Designer.cs">
+      <DependentUpon>frm_FixProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_FixMalGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_FixMalGiris.Designer.cs">
+      <DependentUpon>frm_FixMalGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_InputBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +121,6 @@
     </Compile>
     <Compile Include="frm_Malgiris1.Designer.cs">
       <DependentUpon>frm_Malgiris1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Malgiris1_Reddedilen_Sevkiyat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Malgiris1_Reddedilen_Sevkiyat.Designer.cs">
-      <DependentUpon>frm_Malgiris1_Reddedilen_Sevkiyat.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_malgirisDepo.cs">
       <SubType>Form</SubType>
@@ -414,6 +420,14 @@
       <DependentUpon>AK_Login.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_FixProductList.resx">
+      <DependentUpon>frm_FixProductList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_FixMalGiris.resx">
+      <DependentUpon>frm_FixMalGiris.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_InputBox.resx">
       <DependentUpon>frm_InputBox.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -440,10 +454,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Malgiris1.resx">
       <DependentUpon>frm_Malgiris1.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Malgiris1_Reddedilen_Sevkiyat.resx">
-      <DependentUpon>frm_Malgiris1_Reddedilen_Sevkiyat.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_malgirisDepo.resx">
@@ -697,6 +707,19 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zewm_palet_mal_kabul_oku/500/z_ewm_paletli_mal_kabul_oku/paletlioku%3fsap-client=500">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\WS_Palet\</RelPath>
+      <UpdateFromURL>http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zewm_palet_mal_kabul_oku/500/z_ewm_paletli_mal_kabul_oku/paletlioku%3fsap-client=500</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zktmobil_satis/500/service/service%3fsap-client=500">
       <UrlBehavior>Static</UrlBehavior>
       <RelPath>Web References\WS_Satis\</RelPath>
@@ -871,6 +894,10 @@
     </None>
     <None Include="Web References\WS_Paket\ZktmobilPakYuklemeSaveResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_Palet\paletlioku.wsdl" />
+    <None Include="Web References\WS_Palet\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
     </None>
     <None Include="Web References\WS_Satis\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
