@@ -31,7 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_FixMalGiris));
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.registerDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTransportUnit = new System.Windows.Forms.TextBox();
@@ -39,13 +39,13 @@
             this.fixProductSearchButton = new KoctasMobil.PictureButton();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // registerDate
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 9);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 0;
+            this.registerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.registerDate.Location = new System.Drawing.Point(101, 9);
+            this.registerDate.Name = "registerDate";
+            this.registerDate.Size = new System.Drawing.Size(200, 24);
+            this.registerDate.TabIndex = 0;
             // 
             // label1
             // 
@@ -122,7 +122,7 @@
             this.Controls.Add(this.txtTransportUnit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.registerDate);
             this.MaximizeBox = false;
             this.Menu = this.mainMenu1;
             this.MinimizeBox = false;
@@ -135,7 +135,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker registerDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTransportUnit;

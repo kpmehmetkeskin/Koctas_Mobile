@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixProductList));
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.dataGrid1 = new System.Windows.Forms.DataGrid();
             this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
@@ -38,16 +39,18 @@
             this.dataGridTextBoxColumn4 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn5 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn6 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.btn_send = new KoctasMobil.PictureButton();
             this.SuspendLayout();
             // 
             // dataGrid1
             // 
-            this.dataGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dataGrid1.BackgroundColor = System.Drawing.Color.Tomato;
             this.dataGrid1.Location = new System.Drawing.Point(0, 0);
             this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(318, 295);
+            this.dataGrid1.Size = new System.Drawing.Size(318, 248);
             this.dataGrid1.TabIndex = 0;
             this.dataGrid1.TableStyles.Add(this.dataGridTableStyle1);
+            this.dataGrid1.CurrentCellChanged += new System.EventHandler(this.dataGrid1_CurrentCellChanged);
             // 
             // dataGridTableStyle1
             // 
@@ -100,6 +103,19 @@
             this.dataGridTextBoxColumn6.HeaderText = "Birim";
             this.dataGridTextBoxColumn6.MappingName = "MEINS";
             // 
+            // btn_send
+            // 
+            this.btn_send.BackColor = System.Drawing.Color.Tomato;
+            this.btn_send.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_send.BackgroundImage")));
+            this.btn_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_send.ForeColor = System.Drawing.Color.White;
+            this.btn_send.Location = new System.Drawing.Point(183, 254);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.PressedImage = ((System.Drawing.Image)(resources.GetObject("btn_send.PressedImage")));
+            this.btn_send.Size = new System.Drawing.Size(132, 38);
+            this.btn_send.TabIndex = 18;
+            this.btn_send.Text = "Gönder";
+            // 
             // FixProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -108,6 +124,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(318, 295);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_send);
             this.Controls.Add(this.dataGrid1);
             this.MaximizeBox = false;
             this.Menu = this.mainMenu1;
@@ -128,5 +145,6 @@
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn4;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn5;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn6;
+        private PictureButton btn_send;
     }
 }

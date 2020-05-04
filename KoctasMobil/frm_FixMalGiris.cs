@@ -40,7 +40,8 @@ namespace KoctasMobil
             }
             else
             {
-                MessageBox.Show("Başarılı");
+                FixProductList fixProductList = new FixProductList(txtTransportUnit.Text(), registerDate.Text());
+                fixProductList.Show();
             }
         }
 
