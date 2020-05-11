@@ -31,90 +31,128 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixProductList));
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.dataGrid1 = new System.Windows.Forms.DataGrid();
-            this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
-            this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn3 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn4 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn5 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.dataGridTextBoxColumn6 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.btn_send = new KoctasMobil.PictureButton();
+            this.lbl_MalzemeNo = new System.Windows.Forms.Label();
+            this.txtSevkNo = new System.Windows.Forms.TextBox();
+            this.dtp_kayit = new System.Windows.Forms.DateTimePicker();
+            this.lbl_KayitTarihi = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.grd_mal = new System.Windows.Forms.DataGrid();
+            this.btn_Ekle = new KoctasMobil.PictureButton();
+            this.pictureButton1 = new KoctasMobil.PictureButton();
+            this.btn_Geri = new KoctasMobil.PictureButton();
+            this.btn_Kaydet = new KoctasMobil.PictureButton();
             this.SuspendLayout();
             // 
-            // dataGrid1
+            // lbl_MalzemeNo
             // 
-            this.dataGrid1.BackgroundColor = System.Drawing.Color.Tomato;
-            this.dataGrid1.Location = new System.Drawing.Point(0, 0);
-            this.dataGrid1.Name = "dataGrid1";
-            this.dataGrid1.Size = new System.Drawing.Size(318, 248);
-            this.dataGrid1.TabIndex = 0;
-            this.dataGrid1.TableStyles.Add(this.dataGridTableStyle1);
-            this.dataGrid1.CurrentCellChanged += new System.EventHandler(this.dataGrid1_CurrentCellChanged);
+            this.lbl_MalzemeNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_MalzemeNo.Location = new System.Drawing.Point(3, 9);
+            this.lbl_MalzemeNo.Name = "lbl_MalzemeNo";
+            this.lbl_MalzemeNo.Size = new System.Drawing.Size(122, 18);
+            this.lbl_MalzemeNo.Text = "Taşıma Birimi";
             // 
-            // dataGridTableStyle1
+            // txtSevkNo
             // 
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn1);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn2);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn3);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn4);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn5);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn6);
+            this.txtSevkNo.BackColor = System.Drawing.Color.White;
+            this.txtSevkNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
+            this.txtSevkNo.Location = new System.Drawing.Point(131, 6);
+            this.txtSevkNo.Name = "txtSevkNo";
+            this.txtSevkNo.Size = new System.Drawing.Size(178, 21);
+            this.txtSevkNo.TabIndex = 5;
             // 
-            // dataGridTextBoxColumn1
+            // dtp_kayit
             // 
-            this.dataGridTextBoxColumn1.Format = "";
-            this.dataGridTextBoxColumn1.FormatInfo = null;
-            this.dataGridTextBoxColumn1.HeaderText = "Sa Belge No";
-            this.dataGridTextBoxColumn1.MappingName = "EBELN";
+            this.dtp_kayit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
+            this.dtp_kayit.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_kayit.Location = new System.Drawing.Point(131, 36);
+            this.dtp_kayit.Name = "dtp_kayit";
+            this.dtp_kayit.Size = new System.Drawing.Size(178, 22);
+            this.dtp_kayit.TabIndex = 66;
             // 
-            // dataGridTextBoxColumn2
+            // lbl_KayitTarihi
             // 
-            this.dataGridTextBoxColumn2.Format = "";
-            this.dataGridTextBoxColumn2.FormatInfo = null;
-            this.dataGridTextBoxColumn2.HeaderText = "Kalem";
-            this.dataGridTextBoxColumn2.MappingName = "EBELP";
+            this.lbl_KayitTarihi.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_KayitTarihi.Location = new System.Drawing.Point(3, 38);
+            this.lbl_KayitTarihi.Name = "lbl_KayitTarihi";
+            this.lbl_KayitTarihi.Size = new System.Drawing.Size(122, 20);
+            this.lbl_KayitTarihi.Text = "Kayıt Tarihi:";
             // 
-            // dataGridTextBoxColumn3
+            // label2
             // 
-            this.dataGridTextBoxColumn3.Format = "";
-            this.dataGridTextBoxColumn3.FormatInfo = null;
-            this.dataGridTextBoxColumn3.HeaderText = "Malzeme";
-            this.dataGridTextBoxColumn3.MappingName = "MATNR";
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(97, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.Text = "Miktar:";
+            this.label2.ParentChanged += new System.EventHandler(this.label2_ParentChanged);
             // 
-            // dataGridTextBoxColumn4
+            // textBox2
             // 
-            this.dataGridTextBoxColumn4.Format = "";
-            this.dataGridTextBoxColumn4.FormatInfo = null;
-            this.dataGridTextBoxColumn4.HeaderText = "SA Miktar";
-            this.dataGridTextBoxColumn4.MappingName = "SMENGE";
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular);
+            this.textBox2.Location = new System.Drawing.Point(157, 64);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(56, 21);
+            this.textBox2.TabIndex = 69;
             // 
-            // dataGridTextBoxColumn5
+            // grd_mal
             // 
-            this.dataGridTextBoxColumn5.Format = "";
-            this.dataGridTextBoxColumn5.FormatInfo = null;
-            this.dataGridTextBoxColumn5.HeaderText = "Giriş Miktarı";
-            this.dataGridTextBoxColumn5.MappingName = "AMENGE";
+            this.grd_mal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.grd_mal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(242)))), ((int)(((byte)(228)))));
+            this.grd_mal.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(188)))), ((int)(((byte)(138)))));
+            this.grd_mal.Location = new System.Drawing.Point(3, 94);
+            this.grd_mal.Name = "grd_mal";
+            this.grd_mal.Size = new System.Drawing.Size(312, 112);
+            this.grd_mal.TabIndex = 98;
             // 
-            // dataGridTextBoxColumn6
+            // btn_Ekle
             // 
-            this.dataGridTextBoxColumn6.Format = "";
-            this.dataGridTextBoxColumn6.FormatInfo = null;
-            this.dataGridTextBoxColumn6.HeaderText = "Birim";
-            this.dataGridTextBoxColumn6.MappingName = "MEINS";
+            this.btn_Ekle.BackColor = System.Drawing.Color.Tomato;
+            this.btn_Ekle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Ekle.BackgroundImage")));
+            this.btn_Ekle.ForeColor = System.Drawing.Color.White;
+            this.btn_Ekle.Location = new System.Drawing.Point(3, 64);
+            this.btn_Ekle.Name = "btn_Ekle";
+            this.btn_Ekle.PressedImage = ((System.Drawing.Image)(resources.GetObject("btn_Ekle.PressedImage")));
+            this.btn_Ekle.Size = new System.Drawing.Size(88, 24);
+            this.btn_Ekle.TabIndex = 99;
+            this.btn_Ekle.Text = "Listele";
             // 
-            // btn_send
+            // pictureButton1
             // 
-            this.btn_send.BackColor = System.Drawing.Color.Tomato;
-            this.btn_send.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_send.BackgroundImage")));
-            this.btn_send.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.Location = new System.Drawing.Point(183, 254);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.PressedImage = ((System.Drawing.Image)(resources.GetObject("btn_send.PressedImage")));
-            this.btn_send.Size = new System.Drawing.Size(132, 38);
-            this.btn_send.TabIndex = 18;
-            this.btn_send.Text = "Gönder";
+            this.pictureButton1.BackColor = System.Drawing.Color.Tomato;
+            this.pictureButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureButton1.BackgroundImage")));
+            this.pictureButton1.ForeColor = System.Drawing.Color.White;
+            this.pictureButton1.Location = new System.Drawing.Point(219, 64);
+            this.pictureButton1.Name = "pictureButton1";
+            this.pictureButton1.PressedImage = ((System.Drawing.Image)(resources.GetObject("pictureButton1.PressedImage")));
+            this.pictureButton1.Size = new System.Drawing.Size(88, 24);
+            this.pictureButton1.TabIndex = 100;
+            this.pictureButton1.Text = "Güncelle";
+            // 
+            // btn_Geri
+            // 
+            this.btn_Geri.BackColor = System.Drawing.Color.Tomato;
+            this.btn_Geri.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Geri.BackgroundImage")));
+            this.btn_Geri.ForeColor = System.Drawing.Color.White;
+            this.btn_Geri.Location = new System.Drawing.Point(3, 212);
+            this.btn_Geri.Name = "btn_Geri";
+            this.btn_Geri.PressedImage = ((System.Drawing.Image)(resources.GetObject("btn_Geri.PressedImage")));
+            this.btn_Geri.Size = new System.Drawing.Size(135, 54);
+            this.btn_Geri.TabIndex = 101;
+            this.btn_Geri.Text = "Geri";
+            // 
+            // btn_Kaydet
+            // 
+            this.btn_Kaydet.BackColor = System.Drawing.Color.Tomato;
+            this.btn_Kaydet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Kaydet.BackgroundImage")));
+            this.btn_Kaydet.ForeColor = System.Drawing.Color.White;
+            this.btn_Kaydet.Location = new System.Drawing.Point(180, 212);
+            this.btn_Kaydet.Name = "btn_Kaydet";
+            this.btn_Kaydet.PressedImage = ((System.Drawing.Image)(resources.GetObject("btn_Kaydet.PressedImage")));
+            this.btn_Kaydet.Size = new System.Drawing.Size(135, 54);
+            this.btn_Kaydet.TabIndex = 102;
+            this.btn_Kaydet.Text = "Geri";
             // 
             // FixProductList
             // 
@@ -124,8 +162,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(318, 295);
             this.ControlBox = false;
-            this.Controls.Add(this.btn_send);
-            this.Controls.Add(this.dataGrid1);
+            this.Controls.Add(this.btn_Geri);
+            this.Controls.Add(this.btn_Kaydet);
+            this.Controls.Add(this.pictureButton1);
+            this.Controls.Add(this.btn_Ekle);
+            this.Controls.Add(this.grd_mal);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dtp_kayit);
+            this.Controls.Add(this.lbl_KayitTarihi);
+            this.Controls.Add(this.lbl_MalzemeNo);
+            this.Controls.Add(this.txtSevkNo);
             this.MaximizeBox = false;
             this.Menu = this.mainMenu1;
             this.MinimizeBox = false;
@@ -137,14 +184,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGrid dataGrid1;
-        private System.Windows.Forms.DataGridTableStyle dataGridTableStyle1;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn2;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn3;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn4;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn5;
-        private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn6;
-        private PictureButton btn_send;
+        private System.Windows.Forms.Label lbl_MalzemeNo;
+        private System.Windows.Forms.TextBox txtSevkNo;
+        private System.Windows.Forms.DateTimePicker dtp_kayit;
+        private System.Windows.Forms.Label lbl_KayitTarihi;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGrid grd_mal;
+        private PictureButton btn_Ekle;
+        private PictureButton pictureButton1;
+        private PictureButton btn_Geri;
+        private PictureButton btn_Kaydet;
+
     }
 }
