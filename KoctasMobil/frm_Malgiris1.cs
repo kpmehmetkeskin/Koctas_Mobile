@@ -363,11 +363,6 @@ namespace KoctasMobil
                 {
                     MessageBox.Show("Bu malzeme girilen siparişlerde bulunmuyor.");
                 }
-
-
-
-
-
             }
             catch (Exception ex)
             {

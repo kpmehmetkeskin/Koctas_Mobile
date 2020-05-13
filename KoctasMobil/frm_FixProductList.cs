@@ -16,13 +16,12 @@ namespace KoctasMobil
             InitializeComponent();
         }
 
-        DataTable dt_mal = null;
+        DataTable dt_mal;
 
         private void FixProductList_Load(object sender, EventArgs e)
         {
             this.TopMost = false;
-            Utility.loginInfo(lbl_LoginInfo);
-
+            
             dt_mal = new DataTable();
             dt_mal.Columns.Add("SA_Belge_No");
             dt_mal.Columns.Add("Klm");
@@ -31,7 +30,7 @@ namespace KoctasMobil
             dt_mal.Columns.Add("Teslimat_Miktari");
             dt_mal.Columns.Add("Birim");
             dt_mal.Columns.Add("Giris_Miktari");
-
+            
             txtSevkNo.Focus();
         }
 
@@ -57,17 +56,25 @@ namespace KoctasMobil
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Koctas_VM_Desktop.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU serv = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU();
-                Koctas_VM_Desktop.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKUResponse resp = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKUResponse();
-                Koctas_VM_Desktop.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU1 req = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU1();
-                serv.Credentials = GlobalData.globalCr;
+                KoctasMobil.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU serv = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU();
+                KoctasMobil.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKUResponse resp = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKUResponse();
+                KoctasMobil.WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU1 req = new WS_Palet_Oku.Z_EWM_PALETLI_MAL_KABUL_OKU1();
+                serv.Credentials = ProgramGlobalData.g_credential;
                 req.I_SEVKNO = txtSevkNo.Text.Trim();
                 req.ET_LIST = new WS_Palet_Oku.ZEWM_ST_PALET_MAL_KABUL[0];
                 resp = serv.CallZ_EWM_PALETLI_MAL_KABUL_OKU(req);
 
                 int count = resp.ET_LIST.Length;
-                Koctas_VM_Desktop.WS_Palet_Oku.ZEWM_ST_PALET_MAL_KABUL[] etlist = new WS_Palet_Oku.ZEWM_ST_PALET_MAL_KABUL[count];
+                KoctasMobil.WS_Palet_Oku.ZEWM_ST_PALET_MAL_KABUL[] etlist = new WS_Palet_Oku.ZEWM_ST_PALET_MAL_KABUL[count];
                 etlist = resp.ET_LIST;
+                dt_mal = new DataTable();
+                dt_mal.Columns.Add("SA_Belge_No");
+                dt_mal.Columns.Add("Klm");
+                dt_mal.Columns.Add("Malzeme");
+                dt_mal.Columns.Add("Malzeme_Tanimi");
+                dt_mal.Columns.Add("Teslimat_Miktari");
+                dt_mal.Columns.Add("Birim");
+                dt_mal.Columns.Add("Giris_Miktari");
 
                 for (int i = 0; i < count; i++)
                 {
@@ -79,21 +86,22 @@ namespace KoctasMobil
                     row["Teslimat_Miktari"] = etlist[i].SMENGE.ToString();
                     row["Birim"] = etlist[i].MEINS.ToString();
                     row["Giris_Miktari"] = etlist[i].AMENGE.ToString();
-
+                    //dt_mal.Rows.Add(row.ItemArray);
+                    //dt_mal.Rows.InsertAt(row,i);
                     dt_mal.Rows.Add(row);
                 }
-
                 grd_mal.DataSource = null;
                 grd_mal.DataSource = dt_mal;
-                grd_mal.ReadOnly = true;
-     
-               // grd_mal.Row
+                //grd_mal.ReadOnly = true;
+                //DataTableGoster();
+                // grd_mal.Row
                 //EditdwColumn(grd_mal);
                 Utility.selectText(txtSevkNo);
             }
             catch(Exception ex)
             {
                 string mesaj = ex.Message;
+                MessageBox.Show("3-" + mesaj);
             }
             finally
             {
@@ -102,22 +110,27 @@ namespace KoctasMobil
 
         }
 
+        
+
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                Koctas_VM_Desktop.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET serv = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET();
-                Koctas_VM_Desktop.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDETResponse resp = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDETResponse();
-                Koctas_VM_Desktop.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET1 req = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET1();
-                serv.Credentials = GlobalData.globalCr;
+                KoctasMobil.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET serv = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET();
+                KoctasMobil.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDETResponse resp = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDETResponse();
+                KoctasMobil.WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET1 req = new WS_Palet_Kaydet.Z_EWM_PALETLI_MAL_KABUL_KAYDET1();
+                serv.Credentials = ProgramGlobalData.g_credential;
 
-                Koctas_VM_Desktop.WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL[] paletlist = new WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL[dt_mal.Rows.Count];
+                KoctasMobil.WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL[] paletlist = new WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL[dt_mal.Rows.Count];
 
                 dtp_kayit.Format = DateTimePickerFormat.Custom;
-                dtp_kayit.CustomFormat = "dd-MM-yyy";
-                req.I_BUDAT = dtp_kayit.ToString();
-
+                dtp_kayit.CustomFormat = "yyyy-MM-dd";
+                MessageBox.Show("M-" + dtp_kayit.Value.ToString());
+                String date = dtp_kayit.Value.ToString().Split(' ')[0].Replace('/','-');
+                String date2=date.Split('-')[2] + '-' + date.Split('-')[1] + '-' + date.Split('-')[0];
+                req.I_BUDAT = date2;
+                MessageBox.Show("M-" + date2);
                for (int i = 0; i < dt_mal.Rows.Count; i++)
                 {
                     paletlist[i] = new WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL();
@@ -129,14 +142,16 @@ namespace KoctasMobil
                     paletlist[i].AMENGE = dt_mal.Rows[i]["Giris_Miktari"].ToString();
                     paletlist[i].MEINS = dt_mal.Rows[i]["Birim"].ToString();
                 }
-
                 req.IT_LIST = paletlist;
 
                 resp = serv.CallZ_EWM_PALETLI_MAL_KABUL_KAYDET(req);
 
                 Cursor.Current = Cursors.Default;
-
-                MessageBox.Show(resp.ET_RETURN[0].TYPE, "SONUÇ");
+                if(resp.IT_LIST.Length>0){
+                    MessageBox.Show("Tamamlandı", "SONUÇ");
+                }else{
+                    MessageBox.Show("Tamamlanamadı", "SONUÇ");
+                }
             }
             catch(Exception ex)
             {
@@ -155,21 +170,25 @@ namespace KoctasMobil
 
         private void pictureButton1_Click(object sender, EventArgs e)
         {
-            dt_mal.Rows[rownum]["Giris_Miktari"] = textBox2.Text;
-
+            dt_mal.Rows[rownum]["Giris_Miktari"] = textBox2.Text.Trim().TrimStart();
         }
 
         int rownum = 0;
         private void grd_mal_MouseClick(object sender, MouseEventArgs e)
         {
             rownum = grd_mal.CurrentCell.RowNumber;
-            textBox2.Text = dt_mal.Rows[rownum]["Giris_Miktari"].ToString();
+            textBox2.Text = dt_mal.Rows[rownum]["Giris_Miktari"].ToString().Trim().TrimStart();
         }
 
         private void grd_mal_Click(object sender, EventArgs e)
         {
             rownum = grd_mal.CurrentCell.RowNumber;
-            textBox2.Text = dt_mal.Rows[rownum]["Giris_Miktari"].ToString();
+            textBox2.Text = dt_mal.Rows[rownum]["Giris_Miktari"].ToString().Trim().TrimStart();
+        }
+
+        private void grd_mal_CurrentCellChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
     
