@@ -81,9 +81,9 @@ namespace KoctasMobil
                     DataRow row = dt_mal.NewRow();
                     row["SA_Belge_No"] = etlist[i].EBELN.ToString();
                     row["Klm"] = etlist[i].EBELP.ToString();
-                    row["Malzeme"] = etlist[i].MATNR.ToString();
+                    row["Malzeme"] = etlist[i].MATNR.ToString().Substring(8);
                     row["Malzeme_Tanimi"] = etlist[i].MAKTX.ToString();
-                    row["Teslimat_Miktari"] = etlist[i].SMENGE.ToString();
+                    row["Teslimat_Miktari"] = etlist[i].SMENGE.ToString().Split('.')[0];
                     row["Birim"] = etlist[i].MEINS.ToString();
                     row["Giris_Miktari"] = etlist[i].AMENGE.ToString();
                     //dt_mal.Rows.Add(row.ItemArray);
@@ -126,11 +126,18 @@ namespace KoctasMobil
 
                 dtp_kayit.Format = DateTimePickerFormat.Custom;
                 dtp_kayit.CustomFormat = "yyyy-MM-dd";
-                MessageBox.Show("M-" + dtp_kayit.Value.ToString());
                 String date = dtp_kayit.Value.ToString().Split(' ')[0].Replace('/','-');
-                String date2=date.Split('-')[2] + '-' + date.Split('-')[1] + '-' + date.Split('-')[0];
+                String ay;
+                if (Int32.Parse(date.Split('-')[0]) < 10)
+                {
+                    ay = "0" + date.Split('-')[0];
+                }
+                else
+                {
+                    ay = date.Split('-')[0];
+                }
+                String date2=date.Split('-')[2] + '-' + ay + '-' + date.Split('-')[1];
                 req.I_BUDAT = date2;
-                MessageBox.Show("M-" + date2);
                for (int i = 0; i < dt_mal.Rows.Count; i++)
                 {
                     paletlist[i] = new WS_Palet_Kaydet.ZEWM_ST_PALET_MAL_KABUL();
@@ -143,15 +150,16 @@ namespace KoctasMobil
                     paletlist[i].MEINS = dt_mal.Rows[i]["Birim"].ToString();
                 }
                 req.IT_LIST = paletlist;
+                req.ET_RETURN = new WS_Palet_Kaydet.BAPIRET2[0];
 
                 resp = serv.CallZ_EWM_PALETLI_MAL_KABUL_KAYDET(req);
-
                 Cursor.Current = Cursors.Default;
-                if(resp.IT_LIST.Length>0){
+                if(resp.ET_RETURN[0].TYPE.Equals("S")){
                     MessageBox.Show("Tamamlandı", "SONUÇ");
                 }else{
-                    MessageBox.Show("Tamamlanamadı", "SONUÇ");
+                    MessageBox.Show(resp.ET_RETURN[0].MESSAGE, "SONUÇ");
                 }
+               
             }
             catch(Exception ex)
             {

@@ -707,10 +707,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\Users\kerem.hacifazlioglu\Desktop\paletlikaydet.wsdl">
+    <WebReferenceUrl Include="http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zewm_paletli_mal_kabul_kaydet/500/z_ewm_paletli_mal_kabul_kaydet/paletlikaydet%3fsap-client=500">
       <UrlBehavior>Static</UrlBehavior>
       <RelPath>Web References\WS_Palet_Kaydet\</RelPath>
-      <UpdateFromURL>C:\Users\kerem.hacifazlioglu\Desktop\paletlikaydet.wsdl</UpdateFromURL>
+      <UpdateFromURL>http://kterpdev.koctas.com.tr:8000/sap/bc/srt/wsdl/flv_10002A111AD1/bndg_url/sap/bc/srt/rfc/sap/zewm_paletli_mal_kabul_kaydet/500/z_ewm_paletli_mal_kabul_kaydet/paletlikaydet%3fsap-client=500</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

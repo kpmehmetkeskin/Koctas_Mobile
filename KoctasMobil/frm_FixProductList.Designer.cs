@@ -36,10 +36,6 @@
             this.lbl_KayitTarihi = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_Geri = new KoctasMobil.PictureButton();
-            this.btn_Kaydet = new KoctasMobil.PictureButton();
-            this.pictureButton1 = new KoctasMobil.PictureButton();
-            this.btn_Ekle = new KoctasMobil.PictureButton();
             this.grd_mal = new System.Windows.Forms.DataGrid();
             this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
@@ -49,6 +45,10 @@
             this.dataGridTextBoxColumn5 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn6 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn7 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.btn_Geri = new KoctasMobil.PictureButton();
+            this.btn_Kaydet = new KoctasMobil.PictureButton();
+            this.pictureButton1 = new KoctasMobil.PictureButton();
+            this.btn_Ekle = new KoctasMobil.PictureButton();
             this.SuspendLayout();
             // 
             // lbl_MalzemeNo
@@ -102,6 +102,80 @@
             this.label2.Size = new System.Drawing.Size(54, 20);
             this.label2.Text = "Miktar:";
             // 
+            // grd_mal
+            // 
+            this.grd_mal.BackgroundColor = System.Drawing.Color.Tomato;
+            this.grd_mal.Location = new System.Drawing.Point(3, 91);
+            this.grd_mal.Name = "grd_mal";
+            this.grd_mal.Size = new System.Drawing.Size(312, 121);
+            this.grd_mal.TabIndex = 164;
+            this.grd_mal.TableStyles.Add(this.dataGridTableStyle1);
+            this.grd_mal.Click += new System.EventHandler(this.grd_mal_Click);
+            // 
+            // dataGridTableStyle1
+            // 
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn1);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn2);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn3);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn5);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn6);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn7);
+            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn4);
+            // 
+            // dataGridTextBoxColumn1
+            // 
+            this.dataGridTextBoxColumn1.Format = "";
+            this.dataGridTextBoxColumn1.FormatInfo = null;
+            this.dataGridTextBoxColumn1.HeaderText = "SA Belge No";
+            this.dataGridTextBoxColumn1.MappingName = "SA_Belge_No";
+            this.dataGridTextBoxColumn1.Width = 65;
+            // 
+            // dataGridTextBoxColumn2
+            // 
+            this.dataGridTextBoxColumn2.Format = "";
+            this.dataGridTextBoxColumn2.FormatInfo = null;
+            this.dataGridTextBoxColumn2.HeaderText = "Klm";
+            this.dataGridTextBoxColumn2.MappingName = "Klm";
+            this.dataGridTextBoxColumn2.Width = 33;
+            // 
+            // dataGridTextBoxColumn3
+            // 
+            this.dataGridTextBoxColumn3.Format = "";
+            this.dataGridTextBoxColumn3.FormatInfo = null;
+            this.dataGridTextBoxColumn3.HeaderText = "Malzeme";
+            this.dataGridTextBoxColumn3.MappingName = "Malzeme";
+            this.dataGridTextBoxColumn3.Width = 65;
+            // 
+            // dataGridTextBoxColumn4
+            // 
+            this.dataGridTextBoxColumn4.Format = "";
+            this.dataGridTextBoxColumn4.FormatInfo = null;
+            this.dataGridTextBoxColumn4.HeaderText = "Malzeme Tanımı";
+            this.dataGridTextBoxColumn4.MappingName = "Malzeme_Tanimi";
+            this.dataGridTextBoxColumn4.Width = 250;
+            // 
+            // dataGridTextBoxColumn5
+            // 
+            this.dataGridTextBoxColumn5.Format = "";
+            this.dataGridTextBoxColumn5.FormatInfo = null;
+            this.dataGridTextBoxColumn5.HeaderText = "Teslimat Miktarı";
+            this.dataGridTextBoxColumn5.MappingName = "Teslimat_Miktari";
+            // 
+            // dataGridTextBoxColumn6
+            // 
+            this.dataGridTextBoxColumn6.Format = "";
+            this.dataGridTextBoxColumn6.FormatInfo = null;
+            this.dataGridTextBoxColumn6.HeaderText = "Brm";
+            this.dataGridTextBoxColumn6.MappingName = "Birim";
+            this.dataGridTextBoxColumn6.Width = 25;
+            // 
+            // dataGridTextBoxColumn7
+            // 
+            this.dataGridTextBoxColumn7.Format = "";
+            this.dataGridTextBoxColumn7.FormatInfo = null;
+            this.dataGridTextBoxColumn7.HeaderText = "Giris Miktar";
+            this.dataGridTextBoxColumn7.MappingName = "Giris_Miktari";
+            // 
             // btn_Geri
             // 
             this.btn_Geri.BackColor = System.Drawing.Color.Tomato;
@@ -153,75 +227,6 @@
             this.btn_Ekle.TabIndex = 99;
             this.btn_Ekle.Text = "Listele";
             this.btn_Ekle.Click += new System.EventHandler(this.btn_Ekle_Click);
-            // 
-            // grd_mal
-            // 
-            this.grd_mal.BackgroundColor = System.Drawing.Color.Tomato;
-            this.grd_mal.Location = new System.Drawing.Point(3, 91);
-            this.grd_mal.Name = "grd_mal";
-            this.grd_mal.Size = new System.Drawing.Size(312, 121);
-            this.grd_mal.TabIndex = 164;
-            this.grd_mal.TableStyles.Add(this.dataGridTableStyle1);
-            this.grd_mal.Click += new System.EventHandler(this.grd_mal_Click);
-            // 
-            // dataGridTableStyle1
-            // 
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn1);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn2);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn3);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn4);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn5);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn6);
-            this.dataGridTableStyle1.GridColumnStyles.Add(this.dataGridTextBoxColumn7);
-            // 
-            // dataGridTextBoxColumn1
-            // 
-            this.dataGridTextBoxColumn1.Format = "";
-            this.dataGridTextBoxColumn1.FormatInfo = null;
-            this.dataGridTextBoxColumn1.HeaderText = "SA Belge No";
-            this.dataGridTextBoxColumn1.MappingName = "SA_Belge_No";
-            // 
-            // dataGridTextBoxColumn2
-            // 
-            this.dataGridTextBoxColumn2.Format = "";
-            this.dataGridTextBoxColumn2.FormatInfo = null;
-            this.dataGridTextBoxColumn2.HeaderText = "Kalem";
-            this.dataGridTextBoxColumn2.MappingName = "Klm";
-            // 
-            // dataGridTextBoxColumn3
-            // 
-            this.dataGridTextBoxColumn3.Format = "";
-            this.dataGridTextBoxColumn3.FormatInfo = null;
-            this.dataGridTextBoxColumn3.HeaderText = "Malzeme";
-            this.dataGridTextBoxColumn3.MappingName = "Malzeme";
-            // 
-            // dataGridTextBoxColumn4
-            // 
-            this.dataGridTextBoxColumn4.Format = "";
-            this.dataGridTextBoxColumn4.FormatInfo = null;
-            this.dataGridTextBoxColumn4.HeaderText = "Malzeme Tanımı";
-            this.dataGridTextBoxColumn4.MappingName = "Malzeme_Tanimi";
-            // 
-            // dataGridTextBoxColumn5
-            // 
-            this.dataGridTextBoxColumn5.Format = "";
-            this.dataGridTextBoxColumn5.FormatInfo = null;
-            this.dataGridTextBoxColumn5.HeaderText = "Teslimat Miktarı";
-            this.dataGridTextBoxColumn5.MappingName = "Teslimat_Miktari";
-            // 
-            // dataGridTextBoxColumn6
-            // 
-            this.dataGridTextBoxColumn6.Format = "";
-            this.dataGridTextBoxColumn6.FormatInfo = null;
-            this.dataGridTextBoxColumn6.HeaderText = "Birim";
-            this.dataGridTextBoxColumn6.MappingName = "Birim";
-            // 
-            // dataGridTextBoxColumn7
-            // 
-            this.dataGridTextBoxColumn7.Format = "";
-            this.dataGridTextBoxColumn7.FormatInfo = null;
-            this.dataGridTextBoxColumn7.HeaderText = "Giris Miktar";
-            this.dataGridTextBoxColumn7.MappingName = "Giris_Miktari";
             // 
             // FixProductList
             // 
